@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>Web log viewer</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="../static/css/normalize.css"
+	th:href="@{/css/normalize.css}">
+<link rel="stylesheet" href="../static/css/skeleton.css"
+	th:href="@{/css/skeleton.css}">
+
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="icon" type="image/png" href="../static/images/favicon.png"
+	th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+
+	<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<div class="row">
+			<div class="one-half column">
+				<h4>Web log viewer</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>Configuration</th>
+							<th>Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Log path</td>
+							<td th:text="${configLogPath}">value</td>
+						</tr>
+						<tr>
+							<td>Log files</td>
+							<td th:text="${configLogFiles}">value</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Files:</p>
+				<ul>
+					<li th:each="f : ${files}"><span th:text="${f.name}">File
+							name</span> <a href="#" th:href="@{'/download/' + ${f.id}}">Download</a>
+						<a href="#" th:href="@{'/watch/' + ${f.id}}">Watch</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
