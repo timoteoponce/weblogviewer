@@ -55,8 +55,12 @@
 		</div>
 	</div>
 	<div th:if="${file != null}" class="logSection">
-		<pre id="logContent">
+		<pre th:unless="${file.tooBig}" id="logContent">
 		Loading content...			
+		</pre>
+		<pre th:if="${file.tooBig}" id="logContent">		
+		File too large to display, please <a href="#"
+				th:href="@{'/download/' + ${file.id}}">download</a> it instead			
 		</pre>
 	</div>
 
@@ -65,6 +69,6 @@
 	<script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"
 		th:src="@{/js/jquery-3.4.1.min.js}"></script>
 	<script type="text/javascript" src="../static/js/watcher.js"
-		th:src="@{/js/watcher.js}"></script>
+		th:unless="${file.tooBig}" th:src="@{/js/watcher.js}"></script>
 </body>
 </html>

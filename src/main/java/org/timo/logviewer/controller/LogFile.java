@@ -66,9 +66,18 @@ public class LogFile implements Comparable<LogFile> {
   public LogFile withId(String otherFileId) {
     return new LogFile(otherFileId, name, path, size);
   }
+  
+  /**
+   * Larger than 5MB
+   * @return too big
+   */
+  public boolean isTooBig() {
+	  return size > 5 * 1024 * 1024;
+  }
 
   @Override
   public int compareTo(LogFile o) {
     return this.getPath().compareTo(o.getPath());
   }
+  
 }
