@@ -3,6 +3,7 @@ package org.timo.logviewer.controller;
 import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -48,17 +49,17 @@ public class LogFile {
 		return f.exists() ? of(f) : null;
 	}
 
-	public static Collection<LogFile> of(File[] files) {
+	public static List<LogFile> of(File[] files) {
 		if (files == null)
 			return Collections.emptyList();
 		return toList(Stream.of(files).filter(Objects::nonNull).map(LogFile::of));
 	}
 
-	public static Collection<LogFile> of(Collection<String> logFilesList) {
+	public static List<LogFile> of(Collection<String> logFilesList) {
 		return toList(logFilesList.stream().map(LogFile::of).filter(Objects::nonNull));
 	}
 
-	private static Collection<LogFile> toList(Stream<LogFile> stream) {
+	private static List<LogFile> toList(Stream<LogFile> stream) {
 		return stream.sorted((a, b) -> a.getPath().compareTo(b.getPath())).collect(Collectors.toList());
 	}
 

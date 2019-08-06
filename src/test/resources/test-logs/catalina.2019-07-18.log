@@ -1,0 +1,141 @@
+18-Jul-2019 19:01:24.045 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [manager] does not meet these criteria and has been changed to [/manager]
+18-Jul-2019 19:01:24.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.21
+18-Jul-2019 19:01:24.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jun 4 2019 20:19:36 UTC
+18-Jul-2019 19:01:24.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.21.0
+18-Jul-2019 19:01:24.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+18-Jul-2019 19:01:24.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.13.6
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/timoteo/.sdkman/candidates/java/8u151-oracle/jre
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_151-b12
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /opt/apache-tomcat-9.0.21
+18-Jul-2019 19:01:24.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /opt/apache-tomcat-9.0.21
+18-Jul-2019 19:01:24.060 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/opt/tomcat/conf/logging.properties
+18-Jul-2019 19:01:24.060 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dlog_path=/opt/tomcat/logs
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djavamelody.no-database=true
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx2048M
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms500M
+18-Jul-2019 19:01:24.061 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxMetaspaceSize=1024M
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+CMSClassUnloadingEnabled
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+CMSPermGenSweepingEnabled
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -DWOAllowsConcurrentRequestHandling=true
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -DWOAllowRapidTurnaround=false
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -DNSProjectBundleEnabled=true
+18-Jul-2019 19:01:24.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -DEOAdaptorDebugEnabled=false
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Der.extensions.ERXApplication.developmentMode=false
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+PrintGCDateStamps
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -verbose:gc
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+PrintGCDetails
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xloggc:/opt/tomcat/logs/gc.log
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseGCLogFileRotation
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:NumberOfGCLogFiles=10
+18-Jul-2019 19:01:24.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:GCLogFileSize=100M
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+CMSIncrementalPacing
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseAdaptiveSizePolicy
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+AggressiveOpts
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseAdaptiveGCBoundary
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseTLAB
+18-Jul-2019 19:01:24.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseParNewGC
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseCompressedOops
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseConcMarkSweepGC
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+CMSParallelRemarkEnabled
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseAdaptiveGCBoundary
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+OptimizeStringConcat
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:ParallelGCThreads=6
+18-Jul-2019 19:01:24.065 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:SurvivorRatio=3
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:NewRatio=3
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxGCPauseMillis=10
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+HeapDumpOnOutOfMemoryError
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:HeapDumpPath=/opt/tomcat/temp/hdumps
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/opt/tomcat
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/opt/tomcat
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/opt/tomcat/temp
+18-Jul-2019 19:01:24.066 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/timoteo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+18-Jul-2019 19:01:24.398 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Jul-2019 19:01:24.437 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+18-Jul-2019 19:01:24.439 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [675] milliseconds
+18-Jul-2019 19:01:24.474 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Jul-2019 19:01:24.474 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.21]
+18-Jul-2019 19:01:24.735 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/opt/apache-tomcat-9.0.21/webapps/sfn-adapter-adfs.war]
+18-Jul-2019 19:01:29.820 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Jul-2019 19:01:40.752 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
+18-Jul-2019 19:01:40.754 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Context [/sfn-adapter-adfs] startup failed due to previous errors
+18-Jul-2019 19:01:40.769 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [sfn-adapter-adfs] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Jul-2019 19:01:40.771 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [sfn-adapter-adfs] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+18-Jul-2019 19:01:40.772 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [sfn-adapter-adfs] appears to have started a thread named [HikariPool-2 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+18-Jul-2019 19:01:40.773 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [sfn-adapter-adfs] appears to have started a thread named [pool-2-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1129)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+18-Jul-2019 19:01:40.775 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [sfn-adapter-adfs] appears to have started a thread named [AsyncAppender-Dispatcher-Thread-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ javax.mail.internet.ContentType.setParameter(ContentType.java:191)
+ javax.mail.internet.MimeMultipart.<init>(MimeMultipart.java:212)
+ javax.mail.internet.MimeMultipart.<init>(MimeMultipart.java:193)
+ org.apache.log4j.net.SMTPAppender.sendBuffer(SMTPAppender.java:411)
+ org.apache.log4j.net.SMTPAppender.append(SMTPAppender.java:256)
+ org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:251)
+ org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+ org.apache.log4j.AsyncAppender$Dispatcher.run(AsyncAppender.java:586)
+ java.lang.Thread.run(Thread.java:748)
+18-Jul-2019 19:01:40.784 INFO [AsyncAppender-Dispatcher-Thread-5] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [javax.mail.event.TransportEvent]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [javax.mail.event.TransportEvent]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1373)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1226)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1188)
+		at org.apache.log4j.net.SMTPAppender.sendBuffer(SMTPAppender.java:416)
+		at org.apache.log4j.net.SMTPAppender.append(SMTPAppender.java:256)		
+		at org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:251)
+		at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+		at org.apache.log4j.AsyncAppender$Dispatcher.run(AsyncAppender.java:586)
+		at java.lang.Thread.run(Thread.java:748)
+18-Jul-2019 19:01:40.788 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/opt/apache-tomcat-9.0.21/webapps/sfn-adapter-adfs.war] has finished in [16,054] ms
+18-Jul-2019 19:01:40.796 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/opt/apache-tomcat-9.0.21/webapps/SFApp.war]
+18-Jul-2019 19:01:45.942 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Jul-2019 19:01:54.460 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/opt/apache-tomcat-9.0.21/webapps/SFApp.war] has finished in [13,664] ms
+18-Jul-2019 19:01:54.461 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.21/webapps/docs]
+18-Jul-2019 19:01:54.477 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.21/webapps/docs] has finished in [17] ms
+18-Jul-2019 19:01:54.477 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.21/webapps/examples]
+18-Jul-2019 19:01:54.641 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.21/webapps/examples] has finished in [164] ms
+18-Jul-2019 19:01:54.642 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/opt/apache-tomcat-9.0.21/webapps/host-manager]
+18-Jul-2019 19:01:54.659 INFO [ProcessChangesQueue] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/opt/apache-tomcat-9.0.21/webapps/host-manager] has finished in [17] ms
+18-Jul-2019 19:01:54.662 INFO [ProcessChangesQueue] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Jul-2019 19:01:54.669 INFO [ProcessChangesQueue] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+18-Jul-2019 19:01:54.681 INFO [ProcessChangesQueue] org.apache.catalina.startup.Catalina.start Server startup in [30,242] milliseconds
+18-Jul-2019 19:02:55.575 INFO [Thread-11] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Jul-2019 19:02:55.584 INFO [Thread-11] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+18-Jul-2019 19:02:55.590 INFO [Thread-11] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Jul-2019 19:02:55.706 WARNING [Thread-11] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [SFApp] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Jul-2019 19:02:55.719 INFO [Thread-11] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Jul-2019 19:02:55.722 INFO [Thread-11] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+18-Jul-2019 19:02:55.722 INFO [Thread-11] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Jul-2019 19:02:55.723 INFO [Thread-11] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

@@ -37,48 +37,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="one-half column">
-				<h1>Web log viewer</h1>
-				<table>
-					<thead>
-						<tr>
-							<th>Configuration</th>
-							<th>Value</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Log path</td>
-							<td th:text="${configLogPath}">value</td>
-						</tr>
-						<tr>
-							<td>Log files</td>
-							<td th:text="${configLogFiles}">value</td>
-						</tr>
-					</tbody>
-				</table>
+				<h1>Watching log of file</h1>
+				<strong>
+					<span th:if="${file != null}" th:text="${file.name}"></span>					
+					<span th:if="${file == null}">Log file not found</span>
+				</strong>
+				<br>
+				<a class="button button-primary" href="#" th:href="@{/}">Log files list</a>
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="two-thirds column">
-				<table class="u-full-width">
-					<thead>
-						<tr>
-							<th>File</th>
-							<th>Size</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="f : ${files}">
-							<td><span th:text="${f.name}">File name</span></td>
-							<td><span th:text="'(' + ${f.size} + ')'">2354</span></td>
-							<td><a href="#" th:href="@{'/download/' + ${f.id}}">Download</a>
-								<a href="#" th:href="@{'/watch/' + ${f.id}}">Watch</a></td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="one column"></div>
+			<div class="ten columns">
 			</div>
+			<div class="one column"></div>
 		</div>
 	</div>
 
