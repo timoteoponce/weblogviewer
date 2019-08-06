@@ -37,6 +37,7 @@ public class MainController {
   public String sayHello(Model model) {
     model.addAttribute("configLogFiles", config.getLogFilesList());
     model.addAttribute("configLogPath", config.getLogPath());
+    model.addAttribute("tomcatHome", System.getProperty("catalina.home"));
     model.addAttribute("files", repo.findAll());
     return "main";
   }
