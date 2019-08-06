@@ -52,7 +52,7 @@ public class LogFileRepository {
 
   public Optional<LogFile> getById(String fileId) {
     if (filesMap.containsKey(fileId)) {
-      return Optional.of(LogFile.of(new File(filesMap.get(fileId))));
+      return Optional.of(LogFile.of(new File(filesMap.get(fileId))).withId(fileId));
     }
     return Optional.empty();
   }

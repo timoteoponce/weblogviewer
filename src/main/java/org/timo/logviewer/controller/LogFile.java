@@ -63,4 +63,8 @@ public class LogFile {
 		return stream.sorted((a, b) -> a.getPath().compareTo(b.getPath())).collect(Collectors.toList());
 	}
 
+  public LogFile withId(String otherFileId) {    
+    return new LogFile(otherFileId, name, path, size);
+  }
+
 }

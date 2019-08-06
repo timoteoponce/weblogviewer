@@ -23,6 +23,8 @@
 	th:href="@{/css/normalize.css}">
 <link rel="stylesheet" href="../static/css/skeleton.css"
 	th:href="@{/css/skeleton.css}">
+<link rel="stylesheet" href="../static/css/custom.css"
+	th:href="@{/css/custom.css}">
 
 <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -34,27 +36,44 @@
 
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<input id="fileId" type="hidden" th:if="${file != null}"
+		th:value="${file.id}">
 	<div class="container">
 		<div class="row">
 			<div class="one-half column">
 				<h1>Watching log of file</h1>
-				<strong>
-					<span th:if="${file != null}" th:text="${file.name}"></span>					
-					<span th:if="${file == null}">Log file not found</span>
-				</strong>
-				<br>
-				<a class="button button-primary" href="#" th:href="@{/}">Log files list</a>
+				<p>
+					<strong> <span th:if="${file != null}"
+						th:text="${file.name}"></span> <span th:if="${file == null}">Log
+							file not found</span>
+					</strong>
+				</p>
+				<a class="button button-primary" href="#" th:href="@{/}">Log
+					files list</a> 
+				<a th:if="${file != null}" class="button button-primary"
+					href="#" th:href="@{'/download/' + ${file.id}}">Download file</a>
 			</div>
 		</div>
-		<div class="row">
-			<div class="one column"></div>
-			<div class="ten columns">
-			</div>
-			<div class="one column"></div>
-		</div>
+	</div>
+	<div class="logSection">
+		<pre id="logContent">			
+		</pre>
 	</div>
 
 	<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"
+		th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var fileId = $('#fileId').val();
+			if (fileId) {
+				console.log('file Id', fileId)
+				$.get("../fetch/" + fileId, function(data) {					
+					$("#logContent").html("<span>" + data + "</span>");
+				});
+			}
+		});
+	</script>
 </body>
 </html>
