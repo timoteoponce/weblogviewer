@@ -3,6 +3,7 @@ package org.timo.logviewer.controller;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -59,16 +60,18 @@ public class LogFileRepository {
     if (tomcatHome != null) {
       result.addAll(LogFile.of(loadFromFolder(tomcatHome + "/logs/")));
     }
-    if (config.getLogPath() == null) {
-      result.addAll(LogFile.of(config.getLogFilesList()));
-    } else {
+    Collection<String> logFilesList = config.getLogFilesList();
+    if (!logFilesList.isEmpty()) {
+      result.addAll(LogFile.of(logFilesList));
+    }
+    if (config.getLogPath() != null) {
       result.addAll(LogFile.of(loadFromFolder(config.getLogPath())));
     }
     return result;
   }
 
-  private File[] loadFromFolder(String string) {
-    return new File(config.getLogPath())
+  private File[] loadFromFolder(String path) {
+    return new File(path)
         .listFiles((FilenameFilter) (dir, name) -> name.endsWith(config.getFileExtension()));
   }
 }

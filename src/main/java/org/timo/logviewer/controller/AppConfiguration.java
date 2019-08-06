@@ -2,6 +2,7 @@ package org.timo.logviewer.controller;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
@@ -47,7 +48,7 @@ public class AppConfiguration {
   }
 
   public Collection<String> getLogFilesList() {
-    return logFiles == null ? null : Arrays.asList(logFiles);
+    return logFiles == null ? Collections.emptyList() : Arrays.asList(logFiles);
   }
 
   @Override
