@@ -3,7 +3,6 @@ package org.timo.logviewer.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

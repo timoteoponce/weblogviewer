@@ -3,7 +3,6 @@ package org.timo.logviewer.controller;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
