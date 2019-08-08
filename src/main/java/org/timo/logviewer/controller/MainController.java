@@ -3,6 +3,8 @@ package org.timo.logviewer.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,7 @@ public class MainController {
   public String sayHello(Model model) {
     model.addAttribute("configLogFiles", config.getLogFilesList());
     model.addAttribute("configLogPath", config.getLogPath());
+    model.addAttribute("configLogExtensions", Arrays.asList(config.getFileExtension()));
     model.addAttribute("tomcatHome", System.getProperty("catalina.home"));
     model.addAttribute("files", repo.findAll());
     return "main";

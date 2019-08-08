@@ -3,6 +3,7 @@ package org.timo.logviewer.controller;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -70,7 +71,15 @@ public class LogFileRepository {
   }
 
   private File[] loadFromFolder(String path) {
+    final List<String> extensions = Arrays.asList(config.getFileExtension());
     return new File(path)
-        .listFiles((FilenameFilter) (dir, name) -> name.endsWith(config.getFileExtension()));
+        .listFiles(
+            (FilenameFilter) (dir, name) -> extensions.contains(getExtension(name).orElse("")));
+  }
+
+  private Optional<String> getExtension(final String filename) {
+    return Optional.ofNullable(filename)
+        .filter(f -> f.contains("."))
+        .map(f -> f.substring(filename.lastIndexOf(".")));
   }
 }

@@ -19,8 +19,8 @@ public class AppConfiguration {
   @Value("${logviewer.files:#{systemProperties['logviewer.files']}}")
   private String[] logFiles;
 
-  @Value("${logviewer.extension:#{systemProperties['logviewer.extension'] ?: '.log'}}")
-  private String fileExtension;
+  @Value("${logviewer.extension:#{systemProperties['logviewer.extension'] ?: new String[]{'.log','.zip'}}}")
+  private String[] fileExtension;
 
   public String getLogPath() {
     return logPath;
@@ -38,11 +38,11 @@ public class AppConfiguration {
     this.logFiles = logFiles;
   }
 
-  public String getFileExtension() {
+  public String[] getFileExtension() {
     return fileExtension;
   }
 
-  public void setFileExtension(String fileExtension) {
+  public void setFileExtension(String[] fileExtension) {
     this.fileExtension = fileExtension;
   }
 
@@ -58,7 +58,7 @@ public class AppConfiguration {
         .append(", logFiles=")
         .append(Arrays.toString(logFiles))
         .append(", fileExtension=")
-        .append(fileExtension)
+        .append(Arrays.toString(fileExtension))
         .append("]")
         .toString();
   }

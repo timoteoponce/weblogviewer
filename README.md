@@ -8,7 +8,7 @@ The application is written using Spring-Boot and can run on the following modes:
   -  Requires Java-8 or later
   -  Standalone mode (http://localhost:8080/weblogviewer) 
 ```
-java -jar weblogviewer.jar
+java -jar weblogviewer.war
 ```
   -  Within a container (deploy __weblogviewer.war__)  
   -  Starts on the context path */weblogviewer*
@@ -19,8 +19,8 @@ java -jar weblogviewer.jar
 
 ```
   logviewer.path     (empty by default) = Path for log files, it will filter all the files from this directory e.g. /var/lib/tomcat/logs 
-  logviewer.files    (empty by default)= Comma separated list of specific paths for log files e.g. /var/log/app1.log,/var/log/app2.log 
-  logviewer.extension (.log by default)= File name extension to filter 
+  logviewer.files    (empty by default) = Comma separated list of specific paths for log files e.g. /var/log/app1.log,/var/log/app2.log 
+  logviewer.extension (.log by default) = Comma separated list of file name extensions to filter 
 ```
 
 All options can be configured by either passing the configuration properties as:
