@@ -51,8 +51,12 @@ public class MainController {
   @GetMapping("/fetch/{fileId}")
   public ResponseEntity<?> fetch(@PathVariable(required = true, name = "fileId") String fileId) {
     return repo.getById(fileId)
-        .filter(LogFile::isTextFile)
-        .map(t -> fetch(t, false))
+        .map(t -> {
+          if (t.isTextFile()) {
+            return fetch(t, false);
+          }
+          return ResponseEntity.ok("");
+        })
         .orElse(ResponseEntity.notFound().build());
   }
 
