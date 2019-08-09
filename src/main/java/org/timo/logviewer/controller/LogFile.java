@@ -1,6 +1,7 @@
 package org.timo.logviewer.controller;
 
 import java.io.File;
+import java.security.MessageDigest;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import javax.xml.bind.DatatypeConverter;
 
 public class LogFile implements Comparable<LogFile> {
 
@@ -42,7 +45,18 @@ public class LogFile implements Comparable<LogFile> {
 
   public static LogFile of(File file) {
     return new LogFile(
-        UUID.randomUUID().toString(), file.getName(), file.getAbsolutePath(), file.length());
+        checksum(file.getName()), file.getName(), file.getAbsolutePath(), file.length());
+  }
+
+  private static String checksum(String strValue) {
+    try {
+      MessageDigest md = MessageDigest.getInstance("MD5");
+      md.update(strValue.getBytes());
+      byte[] digest = md.digest();
+      return DatatypeConverter.printHexBinary(digest).toUpperCase();
+    } catch (Exception e) {
+      throw new IllegalStateException(e);
+    }
   }
 
   public static LogFile of(String filePath) {

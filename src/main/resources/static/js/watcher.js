@@ -3,7 +3,12 @@ $(document).ready(function() {
 	if (fileId) {
 		console.log('file Id', fileId)
 		$.get("../fetch/" + fileId, function(data) {
-			$("#logContent").html("<span>" + data + "</span>");
+			if (data) {
+				$("#logContent").html("<span>" + data + "</span>");
+			} else {
+				$("#logContent").html("<span>Empty content</span>");
+			}
+
 		});
 	}
 });
