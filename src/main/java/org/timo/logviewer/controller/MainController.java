@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,37 +45,31 @@ public class MainController {
 
   @GetMapping("/download/{fileId}")
   public ResponseEntity<?> download(@PathVariable(required = true, name = "fileId") String fileId) {
-    return fetch(fileId, true);
+    return repo.getById(fileId).map(t -> fetch(t, true)).orElse(ResponseEntity.notFound().build());
   }
 
   @GetMapping("/fetch/{fileId}")
   public ResponseEntity<?> fetch(@PathVariable(required = true, name = "fileId") String fileId) {
-    return fetch(fileId, false);
+    return repo.getById(fileId)
+        .filter(LogFile::isTextFile)
+        .map(t -> fetch(t, false))
+        .orElse(ResponseEntity.notFound().build());
   }
 
-  public ResponseEntity<?> fetch(String fileId, boolean forceDownload) {
-    return repo.getById(fileId)
-        .map(
-            l -> {
-              File file = new File(l.getPath());
-              try {
-                FileInputStream fis = new FileInputStream(file);
-                InputStreamResource resource = new InputStreamResource(fis);
-                BodyBuilder builder = ResponseEntity.ok();
-                if (forceDownload) {
-                  builder.header(
-                      HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
-                }
-                return builder
-                    .contentLength(file.length())
-                    .contentType(MediaType.TEXT_PLAIN)
-                    .body(resource);
-              } catch (IOException e) {
-                log.error(e.getMessage(), e);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
-              }
-            })
-        .orElse(ResponseEntity.notFound().build());
+  public ResponseEntity<?> fetch(LogFile l, boolean forceDownload) {
+    File file = new File(l.getPath());
+    try {
+      FileInputStream fis = new FileInputStream(file);
+      InputStreamResource resource = new InputStreamResource(fis);
+      BodyBuilder builder = ResponseEntity.ok();
+      if (forceDownload) {
+        builder.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
+      }
+      return builder.contentLength(file.length()).contentType(MediaType.TEXT_PLAIN).body(resource);
+    } catch (IOException e) {
+      log.error(e.getMessage(), e);
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    }
   }
 
   @GetMapping("/watch/{fileId}")

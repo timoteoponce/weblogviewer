@@ -1,18 +1,22 @@
 package org.timo.logviewer.controller;
 
 import java.io.File;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.xml.bind.DatatypeConverter;
-
 public class LogFile implements Comparable<LogFile> {
+
+  private static final Collection<String> KNOWN_TEXT_EXTENSIONS =
+      Collections.unmodifiableCollection(Arrays
+          .asList(".txt", ".log", ".text", ".xml", ".json", ".out", ".html", ".stdout", ".stderr"));
 
   private final String id;
   private final String name;
@@ -50,10 +54,9 @@ public class LogFile implements Comparable<LogFile> {
 
   private static String checksum(String strValue) {
     try {
-      MessageDigest md = MessageDigest.getInstance("MD5");
-      md.update(strValue.getBytes());
-      byte[] digest = md.digest();
-      return DatatypeConverter.printHexBinary(digest).toUpperCase();
+      MessageDigest md5 = MessageDigest.getInstance("MD5");
+      md5.update(StandardCharsets.UTF_8.encode(strValue));
+      return String.format("%032x", new BigInteger(1, md5.digest()));
     } catch (Exception e) {
       throw new IllegalStateException(e);
     }
@@ -65,7 +68,9 @@ public class LogFile implements Comparable<LogFile> {
   }
 
   public static List<LogFile> of(File[] files) {
-    if (files == null) return Collections.emptyList();
+    if (files == null) {
+      return Collections.emptyList();
+    }
     return toList(Stream.of(files).filter(Objects::nonNull).map(LogFile::of));
   }
 
@@ -93,5 +98,9 @@ public class LogFile implements Comparable<LogFile> {
   @Override
   public int compareTo(LogFile o) {
     return this.getPath().compareTo(o.getPath());
+  }
+
+  public boolean isTextFile() {
+    return Utils.getExtension(path).map(KNOWN_TEXT_EXTENSIONS::contains).orElse(true);
   }
 }

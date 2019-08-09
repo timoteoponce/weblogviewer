@@ -19,7 +19,8 @@ public class AppConfiguration {
   @Value("${logviewer.files:#{systemProperties['logviewer.files']}}")
   private String[] logFiles;
 
-  @Value("${logviewer.extension:#{systemProperties['logviewer.extension'] ?: new String[]{'.log','.zip'}}}")
+  @Value(
+      "${logviewer.extension:#{systemProperties['logviewer.extension'] ?: new String[]{'.log','.zip'}}}")
   private String[] fileExtension;
 
   public String getLogPath() {

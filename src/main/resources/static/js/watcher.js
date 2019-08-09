@@ -6,9 +6,10 @@ $(document).ready(function() {
 			if (data) {
 				$("#logContent").html("<span>" + data + "</span>");
 			} else {
-				$("#logContent").html("<span>Empty content</span>");
+				$("#logContent").html("<span>Content can't be displayed, please <strong>download</strong> instead</span>");
 			}
-
+		}).fail(function(response){
+			$("#logContent").html("<span>Content couldn't be fetched [status = " + response.status +"]</span>");
 		});
 	}
 });
